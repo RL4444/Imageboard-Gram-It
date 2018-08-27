@@ -1,0 +1,294 @@
+* {
+    box-sizing: border-box;
+    /* border: 1px solid blue; */
+    margin: 0;
+}
+input {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Advent Pro", sans-serif;
+}
+
+p {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Advent Pro", sans-serif;
+}
+
+h1 {
+    font-family: "Allerta", sans-serif;
+}
+h2 {
+    font-family: "Allerta", sans-serif;
+}
+h3 {
+    font-family: "Allerta", sans-serif;
+}
+h4 {
+    font-family: "Allerta", sans-serif;
+}
+
+body {
+    /* height: 100vh; */
+    width: 100vw;
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header {
+    display: flex;
+    justify-content: space-around;
+    width: 90vw;
+    height: 20vh;
+}
+#gramitlogo {
+    margin-top: 30%;
+    max-width: 250;
+    max-height: 250%;
+    transform: translateX(-85%);
+    transform: translateY(-15%);
+}
+.uploadbox {
+    background-color: rgb(43, 67, 147);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+    width: 50%;
+}
+
+#heynewbie {
+    font-family: "Advent Pro", sans-serif;
+    font-size: 1.6em;
+    font-kerning: normal;
+    color: rgb(159, 159, 159);
+    margin-bottom: 10px;
+}
+
+#main {
+    width: 90vw;
+    height: 80%;
+}
+
+#pagetitle {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 60px;
+    width: 10%;
+    color: red;
+}
+
+.uploadbox button {
+    /* transform: translateX(-150%); */
+}
+
+#rowmaker {
+    margin-left: 30px;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    column-gap: 20px;
+    width: 90vw;
+    height: 65%;
+}
+/* .imageboxing {
+    max-width: 30%;
+    height: 200px;
+} */
+
+#imagerow {
+    border-radius: 10px;
+    height: 500px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.eachImage {
+    border-radius: 10px;
+    border: 1px solid grey;
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
+}
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: rgb(159, 159, 159);
+    width: 100%;
+    height: 20%;
+}
+
+#selectimagebutton {
+    text-align: center;
+}
+
+#morebutton {
+    margin: auto;
+    text-align: center;
+    border: 2px solid black;
+    font-size: 2em;
+    border-radius: 10px;
+    width: 25%;
+}
+
+/* *******MODAL STYLING************* */
+
+#modalbackground {
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid blue;
+    position: fixed;
+    overflow: scroll;
+    /* fixed is poisitoning something in the window whereas absolute is on the overall page */
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(76, 159, 161, 0.5);
+    height: 100%;
+
+    margin: 0;
+    height: 100%;
+}
+
+#cancelx {
+    font-size: 2.5em;
+    width: 3%;
+    top: 2%;
+    right: 2%;
+    position: absolute;
+    z-index: 10000;
+}
+
+#modalimagecontainer {
+    top: 0;
+    background-color: black;
+    position: absolute;
+    justify-content: center;
+    max-width: 60%;
+    width: 40%;
+    height: 100vh;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 20px solid black;
+}
+
+#modalimagelayout {
+    margin: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.modalimageinnercontainer {
+}
+
+#modalimage {
+    max-height: 30%;
+    max-width: 70%;
+    margin: 0;
+    object-fit: cover;
+    border-radius: 10px;
+}
+#modaltexttitle {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    height: auto;
+    margin-left: 0;
+    font-size: 30px;
+    color: black;
+    top: 0;
+    position: absolute;
+    width: 80%;
+}
+#modaltextdesc {
+    height: auto;
+    margin-right: 0;
+    position: absolute;
+    width: 80%;
+}
+
+#commentsboxitems {
+    display: flex;
+    flex-direction: column;
+    flex: 2 0 0;
+}
+
+#commenttextheader {
+    color: white;
+}
+
+.sudoform {
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    border: 10px solid black;
+}
+.userandsubmit-container {
+    flex: 1;
+}
+#usernamecommentinput {
+}
+
+#commentsboxitems {
+    color: white;
+}
+#flexrowitem {
+    display: flex;
+    flex-direction: row;
+}
+
+#commentinput {
+    border: 10px solid black;
+    width: 100%;
+}
+#listofcomments {
+    color: black;
+    width: 100%;
+    height: 30%;
+}
+.placeholder {
+    height: 30%;
+}
+.commentcontainter {
+    bottom: 20px;
+    top: 10%;
+    border: 3px solid black;
+    width: 93%;
+    height: 20%;
+    background-color: rgb(203, 200, 204);
+    border-radius: 20px;
+}
+.commenttext {
+    width: 100%;
+    justify-content: flex-start;
+}
+.userandsubmit-container {
+    display: flex;
+    flex-direction: row;
+}
+.userandtime {
+    display: flex;
+    justify-content: space-between;
+}
+
+.commentcol {
+    flex: 1;
+}
+.classholder {
+    height: 20px;
+}

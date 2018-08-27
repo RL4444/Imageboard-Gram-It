@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+    <title>Image board home</title>
+    <link rel="stylesheet" href="/stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Advent+Pro" rel="stylesheet">
+</head>
+<body>
+
+
+
+
+<div id="main" v-if="images.length > 0">
+    <fullmodal v-if="imageId" :key="imageId" :id="imageId" @close="closeModal"></fullmodal>
+    <div class="header">
+        <div id="pagetitle">
+            <img id="gramitlogo" src="gram-it-logo.png"  alt="">
+            <!-- <h1>INSTA-KILO</h1> -->
+        </div>
+
+
+
+        <div class="uploadbox">
+            <h4 id="heynewbie">Hey newbie! Get involved by uploading an image toady!</h4>
+            <form class="" action="index.html" method="post">
+
+                <input type="text" v-model="title" value="" placeholder="Image title" required>
+                <input type="text" v-model="description" value="" placeholder="description" required>
+                <input type="text" v-model="username" value=""placeholder="Username" required>
+
+            </form>
+            <label id="selectimagebutton" for="file-field">select image</label>
+            <input id="file-field" type="file" @change="imageSelected">
+            <button @click="upload" type="button" name="button">upload</button>
+
+        </div>
+
+
+    </div>
+
+    <div id="rowmaker">
+
+
+        <div id="imagerow" v-for="image in images">
+            <img v-on:click="showModal(image.id)" class="eachImage" :key="images.id" :src= "image.url">
+                <div class="text">
+                    <h3>{{image.title}}</h3>
+                    <p>{{image.description}}</p>
+                    <p>{{image.user}}</p>
+
+                </div>
+        </div>
+    </div>
+            <p id="morebutton" v-on:click="showMoreImages(imageId + 6)">More Images</p>
+</div>
+
+
+<script id="fullmodal" type="text/x-template">
+    <div id="modalbackground"  @click="change">
+        <p id="cancelx"  @click="hidemodal"> x </p>
+
+
+            <div id="modalimagecontainer">
+
+
+                <div id="modalimagelayout">
+                                    <div class="modalimageinnercontainer">
+                                    <img id="modalimage" :src= "url" alt="">
+                                        <div id="modaltexttitle">
+                                            <h4>{{ title}}</h4>
+                                        </div>
+                                        <div id="modaltextdesc">
+                                            <p>{{ description }}</p>
+                                        </div>
+                                    </div>
+                                     <p id="commenttextheader">Latest Comments</p>
+                    <div id="commentsboxitems">
+
+
+                            <div v-if="comments.length > 0">
+                                        <div id="listofcomments" >
+                                <div v-for="comment in comments">
+                                        <div class="commentcontainter">
+
+                                            <div class="commenttext">
+                                                <p>{{comment.comment}}</p>
+                                            </div>
+                                            <div class="userandtime">
+                                                    <div class="commentcol">
+                                                <h4>{{comment.username}}</h4>
+                                                    </div>
+                                                    <div class="commentcol">
+                                                <p>{{comment.created_at}}</p>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        <div class="placeholder"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sudoform">
+
+                                <h4>Leave a comment!</h4>
+                                <input id="commentinput" type="text" v-model="comment" name="comment" placeholder="speak your mind">
+
+
+                                <div class="userandsubmit-container">
+                                    <div class="commentcol">
+
+                                    <input id="usernamecommentinput" v-model="username" type="text" name="username"  placeholder="username">
+                                </div>
+                                    <div class="commentcol">
+                                    <button @click="submitcomment" name="button">submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</script>
+
+<!-- <div class="commentcol"> -->
+
+
+
+    <script src="/js/vue.js"></script>
+    <script src="/js/axios.min.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>
