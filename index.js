@@ -105,4 +105,4 @@ app.post("/upload", handleFile, s3.upload, function(req, res) {
     }
 });
 
-app.listen(8080, () => console.log("go ahead caller, I'm listening"));
+app.listen(process.env.PORT || 8080);
